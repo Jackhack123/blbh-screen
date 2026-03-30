@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Remove all margins so the content fills the TV screen */
+        body, html { margin: 0; padding: 0; overflow: hidden; background: black; }
+
+        /* The scaling wrapper */
+        .zoom-container {
+            width: 125%;      /* Increase area to 125% (makes content smaller) */
+            height: 125%;     /* Match height scaling */
+            transform: scale(0.8); /* Shrink it back down to fit (1 / 1.25 = 0.8) */
+            transform-origin: 0 0; /* Keep the anchor point at the top-left */
+            position: absolute;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="zoom-container">
+        <iframe src="https://blbh.shulcloud.com/tv.php?&id=3813&user_id=15727716&hash=1e920e7d6a4492d6f57ffd8e739180886c4af925"></iframe>
+    </div>
+</body>
+</html>
