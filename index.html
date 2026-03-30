@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- This tells the browser to pretend the screen is 1920px wide -->
+    <meta charset="UTF-8">
+    <!-- This line tricks the device into thinking it is a 1920px wide monitor -->
     <meta name="viewport" content="width=1920">
+    <title>Desktop View Wrapper</title>
     <style>
-        body, html { 
-            margin: 0; padding: 0; height: 100%; width: 100%; 
-            overflow: hidden; background: #000; 
+        /* Ensure the page and the container fill the TV screen exactly */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* Black background to avoid white flashes */
         }
 
-        .desktop-wrapper {
-            width: 1920px;   /* Standard Desktop Width */
-            height: 1080px;  /* Standard Desktop Height */
-            
-            /* Zoom Math: 
-               If your TV is 1080p, scale is 1.0. 
-               If text is still too big, drop scale to 0.7 or 0.8 */
-            transform: scale(1.0); 
-            transform-origin: 0 0;
+        /* The container forces the internal browser to render at 1920px */
+        .desktop-container {
             position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
         }
 
+        /* The iframe will now treat 100% width as the desktop width */
         iframe {
             width: 100%;
             height: 100%;
@@ -29,9 +34,10 @@
     </style>
 </head>
 <body>
-    <div class="desktop-wrapper">
-        <!-- Add your URL here -->
-        <iframe src="https://blbh.shulcloud.com/tv.php?&id=3813&user_id=15727716&hash=1e920e7d6a4492d6f57ffd8e739180886c4af925"></iframe>
+    <div class="desktop-container">
+        <!-- REPLACE THE URL BELOW WITH YOUR WEBSITE -->
+        <iframe src="https://blbh.shulcloud.com/tv.php?&id=3813&user_id=15727716&hash=1e920e7d6a4492d6f57ffd8e739180886c4af925
+"></iframe>
     </div>
 </body>
 </html>
