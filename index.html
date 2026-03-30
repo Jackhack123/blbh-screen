@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- This tells the browser to pretend the screen is 1920px wide -->
+    <meta name="viewport" content="width=1920">
     <style>
-        /* Remove all margins so the content fills the TV screen */
-        body, html { margin: 0; padding: 0; overflow: hidden; background: black; }
+        body, html { 
+            margin: 0; padding: 0; height: 100%; width: 100%; 
+            overflow: hidden; background: #000; 
+        }
 
-        /* The scaling wrapper */
-        .zoom-container {
-            width: 125%;      /* Increase area to 125% (makes content smaller) */
-            height: 125%;     /* Match height scaling */
-            transform: scale(0.8); /* Shrink it back down to fit (1 / 1.25 = 0.8) */
-            transform-origin: 0 0; /* Keep the anchor point at the top-left */
+        .desktop-wrapper {
+            width: 1920px;   /* Standard Desktop Width */
+            height: 1080px;  /* Standard Desktop Height */
+            
+            /* Zoom Math: 
+               If your TV is 1080p, scale is 1.0. 
+               If text is still too big, drop scale to 0.7 or 0.8 */
+            transform: scale(1.0); 
+            transform-origin: 0 0;
             position: absolute;
         }
 
@@ -22,8 +29,9 @@
     </style>
 </head>
 <body>
-    <div class="zoom-container">
-        <iframe src="https://blbh.shulcloud.com/tv.php?&id=3813&user_id=15727716&hash=1e920e7d6a4492d6f57ffd8e739180886c4af925"></iframe>
+    <div class="desktop-wrapper">
+        <!-- Add your URL here -->
+        <iframe src="INSERT_YOUR_URL_HERE"></iframe>
     </div>
 </body>
 </html>
